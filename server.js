@@ -78,7 +78,7 @@ app.get("/waitlist", function(req, res) {
 // });
 
 // Create New Characters - takes in JSON input
-app.post("/api/tables", function(req, res) {
+app.post("/api/table", function(req, res) {
   var newReservation = req.body;
 
   console.log(newReservation);
