@@ -28,7 +28,7 @@ var tableData = [{
   PhoneNumber: 51200000,
   Email: "erin@gmail.com",
   customerID: 10111,
-  tableNumber:4
+  tableNumber:2
   
 }];
 
@@ -87,6 +87,7 @@ app.post("/api/table", function(req, res) {
     waitList.push(newReservation);
     res.json({failed: true});
   } else {
+      newReservation.tableNumber = tableData.length + 1
       tableData.push(newReservation);
       res.json(newReservation);
   }
