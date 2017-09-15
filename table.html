@@ -19,8 +19,8 @@
         
                     <div class="text-center">
                         
-                        <a href="reserv.html"><button type="button" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
-                        <a href="index.html"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
+                        <a href="/add"><button type="button" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
+                        <a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
                     </div>
         
                 </div>
@@ -50,7 +50,7 @@
         
             <footer class="footer">
               <div class="container">
-                    <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a></p>
+                    <p><a href="/all">API Table Link</a> | <a href="/waitlist">API Wait List</a></p>
               </div>
             </footer>
         
@@ -69,12 +69,12 @@
         var currentURL = window.location.origin;
 
         // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-        $.ajax({url: currentURL + "/api/tables", method: "GET"})
+        $.ajax({url:"/all", method: "GET"})
             .done(function(tableData) {
 
                 // Here we are logging the URL so we have access to it for troubleshooting
                 console.log("------------------------------------");
-                console.log("URL: " + currentURL + "/api/tables");
+                console.log("URL: " + currentURL + "/all");
                 console.log("------------------------------------");
 
                 // Here we then log the NYTData to console, where it will show up as an object.
@@ -106,12 +106,12 @@
         var currentURL = window.location.origin;
 
         // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-        $.ajax({url: currentURL + "/api/waitlist", method: "GET"})
+        $.ajax({url: "/waitlist", method: "GET"})
             .done(function(waitlistData) {
 
                 // Here we are logging the URL so we have access to it for troubleshooting
                 console.log("------------------------------------");
-                console.log("URL: " + currentURL + "/api/waitlist");
+                console.log("URL: " + currentURL + "/waitlist");
                 console.log("------------------------------------");
 
                 // Here we then log the NYTData to console, where it will show up as an object.
